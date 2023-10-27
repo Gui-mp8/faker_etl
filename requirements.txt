@@ -1,0 +1,6 @@
+Faker==19.12.0
+findspark==2.0.1
+pydantic==2.4.2
+pyspark==3.5.0
+SQLAlchemy==2.0.22
+psycopg2-binary==2.9.9
