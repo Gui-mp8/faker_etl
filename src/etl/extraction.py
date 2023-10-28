@@ -21,7 +21,7 @@ def extract_to_new_table(path):
     # Read base tables from database
     reader = spark.read\
         .format("jdbc")\
-            .option("url", "jdbc:postgresql://localhost:5432/sicredi_data_challenge") \
+            .option("url", "jdbc:postgresql://postgres:5432/sicredi_data_challenge") \
             .option("driver", "org.postgresql.Driver") \
             .option("user", "sicredi") \
             .option("password", "postgresql") \
