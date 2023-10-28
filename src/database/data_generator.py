@@ -1,11 +1,15 @@
+from typing import Any, Dict, List, Optional, Sequence, Union
 from faker import Faker
 from datetime import date
 
+from faker.generator import Generator
+
 
 class DataGenerator(Faker):
-    fake = Faker()
+    def __init__(self):
+        self.fake = Faker()
 
-    def sample_associado(self, row_number):
+    def sample_associado(self, row_number: int) -> List[Dict[str, Any]]:
         data = list()
 
         for row in range(1, row_number + 1):
@@ -36,7 +40,7 @@ class DataGenerator(Faker):
 
         return data
 
-    def sample_cartao(self, row_number):
+    def sample_cartao(self, row_number) -> List[Dict[str, Any]]:
         data = list()
 
         for row in range(1, row_number + 1):
@@ -53,7 +57,7 @@ class DataGenerator(Faker):
 
         return data
 
-    def sample_movimento(self, row_number):
+    def sample_movimento(self, row_number) -> List[Dict[str, Any]]:
         data = list()
 
         for row in range(1, row_number + 1):
