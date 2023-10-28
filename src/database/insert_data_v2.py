@@ -78,7 +78,7 @@ def insert_data_to_db(rows_number):
     for table in tables_to_load.items():
         table[1].write \
             .format("jdbc") \
-            .option("url", "jdbc:postgresql://sicredi:postgresql@postgres/sicredi_data_challenge") \
+            .option("url", "jdbc:postgresql://postgres:5432/sicredi_data_challenge") \
             .option("driver", "org.postgresql.Driver") \
             .option("dbtable", str(table[0])) \
             .option("user", "sicredi") \
