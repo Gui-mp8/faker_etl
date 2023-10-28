@@ -85,3 +85,5 @@ def insert_data_to_db(rows_number):
             .option("password", "postgresql") \
             .mode("append") \
             .save()
+# .option("url", "jdbc:postgresql://sicredi:postgresql@postgres/sicredi_data_challenge") \
+            # .option("url", "jdbc:postgresql://localhost:5432/sicredi_data_challenge") \

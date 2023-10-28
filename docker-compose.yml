@@ -1,3 +1,58 @@
+version: '3'
+
+services:
+  postgres:
+    container_name: postgres_sicredi
+    image: postgres:13
+    environment:
+      POSTGRES_DB: sicredi_data_challenge
+      POSTGRES_USER: sicredi
+      POSTGRES_PASSWORD: postgresql
+    ports:
+      - 5432:5432
+    volumes:
+      - './.postgres:/var/lib/postgresql/data/'
+      # - ./sql/northwind.sql:/docker-entrypoint-initdb.d/northwind.sql
+      # - ./init-scripts:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  run:
+    image: "faker_etl"
+    volumes:
+      - .:/app
+    command: /spark/bin/spark-submit src/main.py
+  # run:
+  #   # image: "faker_etl"
+  #   container_name: spark-container
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   volumes:
+  #     - .:/app
+  #   command: /spark/bin/spark-submit src/main.py
+  #   depends_on:
+  #     - postgres
+  # spark:
+  #   container_name: spark-container
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - 8888:8888
+  #     - 4040:4040
+  #   depends_on:
+  #     - postgres
+#   python:
+#     build: .
+#     command: python3 src/main.py
+#     volumes:
+#       - .:/app
+#     depends_on:
+#       - postgres
 # version: '3'
 
 # services:
@@ -10,61 +65,47 @@
 #       POSTGRES_PASSWORD: postgresql
 #     volumes:
 #       - './.postgres:/var/lib/postgresql/data/'
-#       # - ./sql/northwind.sql:/docker-entrypoint-initdb.d/northwind.sql
-#       # - ./init-scripts:/docker-entrypoint-initdb.d
 #     ports:
 #       - 5432:5432
 
-#   python:
-#     build: .
-#     command: python3 src/main.py
+#   spark-master:
+#     image: bitnami/spark:latest
+#     ports:
+#       - 8080:8080
+#       - 7077:7077
+#     environment:
+#       - SPARK_MODE=master
+#       - SPARK_RPC_AUTHENTICATION_ENABLED=no
+#       - SPARK_RPC_ENCRYPTION_ENABLED=no
+#       - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
+#       - SPARK_SSL_ENABLED=no
 #     volumes:
-#       - .:/app
+#       - ./data:/data
+
+#   spark-worker:
+#     image: bitnami/spark:latest
+#     depends_on:
+#       - spark-master
+#     environment:
+#       - SPARK_MODE=worker
+#       - SPARK_MASTER_URL=spark://spark-master:7077
+#       - SPARK_WORKER_MEMORY=1G
+#       - SPARK_WORKER_CORES=1
+#       - SPARK_RPC_AUTHENTICATION_ENABLED=no
+#       - SPARK_RPC_ENCRYPTION_ENABLED=no
+#       - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
+#       - SPARK_SSL_ENABLED=no
+#     volumes:
+#       - ./data:/data
+
+#   python-app:
+#     build: .
 #     depends_on:
 #       - postgres
-version: '3'
-
-services:
-  postgres:
-    container_name: postgres_sicredi
-    image: postgres:13
-    environment:
-      POSTGRES_DB: sicredi_data_challenge
-      POSTGRES_USER: sicredi
-      POSTGRES_PASSWORD: postgresql
-    volumes:
-      - './.postgres:/var/lib/postgresql/data/'
-    ports:
-      - 5432:5432
-
-  spark-master:
-    image: bitnami/spark:latest
-    ports:
-      - 8080:8080
-      - 7077:7077
-    environment:
-      - SPARK_MODE=master
-    volumes:
-      - ./data:/data
-
-  spark-worker:
-    image: bitnami/spark:latest
-    depends_on:
-      - spark-master
-    environment:
-      - SPARK_MODE=worker
-      - SPARK_MASTER_URL=spark://spark-master:7077
-    volumes:
-      - ./data:/data
-
-  custom-python-app:
-    build: .
-    depends_on:
-      - postgres
-      - spark-master
-      - spark-worker
-    volumes:
-      - ./data:/data
+#       - spark-master
+#       - spark-worker
+#     volumes:
+#       - ./data:/data
 
 
   # pyspark:
