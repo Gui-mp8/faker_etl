@@ -14,7 +14,7 @@ def main():
     # insert_data()
     insert_data_to_db(100)
     print("Data Inserted!")
-    extract_to_new_table('data/movimento_flat.csv')
+    extract_to_new_table('data/movimento_flat')
     print('csv file was created in the specified path')
     print('---------------')
 
