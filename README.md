@@ -1,14 +1,23 @@
 # Faker ETL
 
-## Sobre:
-### Este projeto tem como objetivo resolver o desafio técnico,  no qual ocorre a ingestão de dados aleatórios em um banco PostgreSQL,  a extração desses dados é a união dos mesmos para uma tabela final em csv.
+Este projeto tem como objetivo resolver o desafio técnico,  no qual ocorre a ingestão de dados aleatórios em um banco PostgreSQL,  a extração desses dados é a união dos mesmos para uma tabela final em csv.
 
-## Tecnologias:
-Linux - Ubuntu
-Python - 3.9
-Container - Docker
-Banco de Dados - PostgreSQL 
+## Tecnologias
+<table>
+    <tr>
+        <td>Linux</td>
+        <td>Código</td>
+        <td>Banco de Dados</td>
+        <td>Container</td>
+        <td>Outros</td>
+    </tr>
+    <tr>
+        <td>Ubuntu</td>
+        <td>Python/PySpark</td>
+        <td>PostgreSQL</td>
+        <td>Docker</td>
+        <td>DBeaver/dbdiagram.io</td>
+    </tr>
+</table>
 
-## Pre-requisitos:
-1 - Instalação do Python
-2 - Instalação do docker e atualização do docker componse plug-in
+## Pré Requisitos
