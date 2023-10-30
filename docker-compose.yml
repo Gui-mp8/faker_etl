@@ -20,16 +20,10 @@ services:
       timeout: 5s
       retries: 5
 
-  run:
+  desafio-sicredi:
     image: "faker_etl"
+    build:
+      dockerfile: Dockerfile
     volumes:
       - .:/app
     command: /spark/bin/spark-submit src/main.py
-
-  # run:
-  #   build:
-  #     context: .
-  #     dockerfile: Dockerfile
-  #   volumes:
-  #     - .:/app
-  #   command: /spark/bin/spark-submit src/main.py
