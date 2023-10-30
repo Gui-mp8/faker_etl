@@ -61,30 +61,25 @@ Siga os passos abaixo para executar o projeto:
     ```
     $ cd faker-etl
     ```
-### Linux
-3. Dê as permissões necessárias para o arquivo .sh
+3. Crie o ambiente python
+
+    ```
+    $ python3 -m venv venv
+    $ source venv/bin/activate
+    $ pip install -r requiriments.txt
+    ```
+
+4. Dê as permissões necessárias para o arquivo .sh
 
     ```
     $ chmod +x tests.sh
     ```
-4. Execute o seguinte comando para executar o arquivo apenas se todos os testes forem aprovados
+5. Execute o seguinte comando para executar o arquivo apenas se todos os testes forem aprovados
 
     ```
     $ ./tests.sh
     ```
-### Windows:
 
-3. Execute os testes:
-
-    ```
-    $ pytest tests/
-    ```
-
-4. Execute o seguinte comando para construir a imagem Docker, iniciar os containers e executar o código do desafio:
-
-    ```
-    $ docker compose up
-    ```
 ## Resolução do Desafio
 
 ### Modelar a Estrutura
