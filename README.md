@@ -79,7 +79,7 @@ Este fluxo pode ser observado no arquivo **main.py**.
 
 ### Por que optamos por este design?
 
-Optamos por um design predominantemente em Python, pois isso facilita a adição de novas funcionalidades ao código. Além disso, permite a realização de testes de forma rápida e simples utilizando a biblioteca Pytest.
+Optamos por um design predominantemente em Python, pois isso facilita a adição de novas funcionalidades ao código. Além disso, permite a realização de testes de forma automatizada e simples utilizando a biblioteca Pytest.
 
 ### O que faríamos se tivéssemos mais tempo para concluir o desafio?
 
