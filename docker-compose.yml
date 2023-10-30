@@ -20,6 +20,18 @@ services:
       timeout: 5s
       retries: 5
 
+  # test:
+  #   image: "faker_etl"
+  #   build:
+  #     dockerfile: Dockerfile
+  #   volumes:
+  #     - .:/app
+  #   environment:
+  #     - PYTHONPATH=/app
+  #   command: pytest tests/test.py
+  #   depends_on:
+  #     - postgres
+
   desafio-sicredi:
     image: "faker_etl"
     build:
@@ -27,3 +39,5 @@ services:
     volumes:
       - .:/app
     command: /spark/bin/spark-submit src/main.py
+    depends_on:
+      - postgres
