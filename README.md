@@ -41,6 +41,10 @@ Antes de executar o projeto, certifique-se de ter as seguintes ferramentas insta
 
 **OBS**: Você também pode visualizar o banco de dados utilizando o [DBeaver](https://dbeaver.io/download/).  Para instruções sobre como configurar a conexão entre o DBeaver e o PostgreSQL, consulte este [tutorial](https://alexdepaula18.medium.com/conectando-no-banco-de-dados-postgresql-utilizando-dbeaver-community-1275f4c9bcba)
 
+## Configuração
+
+No arquivo `config.json` pode ser feita a configuração da quantidade de dados existentes nas tabelas. O padrão esta em **100** linhas cada tabela. Além disso, pode-se também definir a pasta para onde o resultado final do desafio será enviado.
+
 ## Execução
 
 Siga os passos abaixo para executar o projeto:
@@ -56,8 +60,26 @@ Siga os passos abaixo para executar o projeto:
     ```
     $ cd faker-etl
     ```
+### Linux
+3. Dê as permissões necessárias para o arquivo .sh
 
-3. Execute o seguinte comando para construir a imagem Docker, iniciar os containers e executar o código do desafio:
+    ```
+    $ chmod +x tests.sh
+    ```
+4. Execute o seguinte comando para executar o arquivo apenas se todos os testes forem aprovados
+
+    ```
+    $ ./tests.sh
+    ```
+### Windows:
+
+3. Execute os testes:
+
+    ```
+    $ pytest tests/
+    ```
+
+4. Execute o seguinte comando para construir a imagem Docker, iniciar os containers e executar o código do desafio:
 
     ```
     $ docker compose up
@@ -86,4 +108,4 @@ Se tivéssemos mais tempo, integraríamos o Apache Airflow para uma melhor orque
 
 ### Dificuldades encontradas no desenvolvimento
 
-A principal dificuldade durante o desenvolvimento foi a configuração do arquivo `docker-compose.yml` para permitir a execução de todos os containers e o código principal com um único comando.
+Uma das dificuldades durante o desenvolvimento foi a configuração do arquivo `docker-compose.yml` para permitir a execução de todos os containers e o código principal com um único comando. Uma outra dificuldade foi execução automatica dos testes juntamente a execução dos containers.
