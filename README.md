@@ -60,8 +60,7 @@ Siga os passos abaixo para executar o projeto:
 3. Execute os seguintes comandos para construir a imagem Docker e iniciar os containers:
 
     ```
-    $ docker build --tag=faker_etl .
-    $ docker compose up -d
+    $ docker compose up
     ```
 ## Resolução do Desafio
 
