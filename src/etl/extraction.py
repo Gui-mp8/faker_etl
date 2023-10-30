@@ -23,11 +23,12 @@ class PostgresqlExtraction(DBExtraction):
         """
         reader = self.spark.read\
             .format("jdbc")\
-                .option("url", "jdbc:postgresql://localhost:5432/sicredi_data_challenge") \
+                .option("url", "jdbc:postgresql://postgres:5432/sicredi_data_challenge") \
                 .option("driver", "org.postgresql.Driver") \
                 .option("user", "sicredi") \
                 .option("password", "postgresql") \
                 # .option("url", "jdbc:postgresql://postgres:5432/sicredi_data_challenge") \
+                # .option("url", "jdbc:postgresql://localhost:5432/sicredi_data_challenge") \
         return reader
 
     def query_tables(self) -> DataFrame:

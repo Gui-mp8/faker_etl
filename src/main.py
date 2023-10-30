@@ -23,7 +23,8 @@ from utils.config import load_config
 
 def main(config):
     db = PostgreSQL()
-    db.conn = "postgresql://sicredi:postgresql@localhost:5432/sicredi_data_challenge"
+    # db.conn = "postgresql://sicredi:postgresql@localhost:5432/sicredi_data_challenge"
+    db.conn = "postgresql://sicredi:postgresql@postgres/sicredi_data_challenge"
     print("Droping tables..")
     db.drop_table()
     print("Tables dropped!!! \nCreating Tables...")

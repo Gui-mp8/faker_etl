@@ -78,7 +78,7 @@ class PostegresqlLoad(DBLoad):
         for table in tables_to_load.items():
             table[1].write \
                 .format("jdbc") \
-                .option("url", "jdbc:postgresql://localhost:5432/sicredi_data_challenge") \
+                .option("url", "jdbc:postgresql://postgres:5432/sicredi_data_challenge") \
                 .option("driver", "org.postgresql.Driver") \
                 .option("dbtable", str(table[0])) \
                 .option("user", "sicredi") \
