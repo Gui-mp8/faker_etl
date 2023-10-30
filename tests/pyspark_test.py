@@ -4,6 +4,15 @@ import findspark
 from pyspark.sql import SparkSession, DataFrame
 from pyspark.sql.types import IntegerType, StringType, StructField, StructType
 
+def test_spark_connection():
+    findspark.init()
+    spark = SparkSession \
+        .builder \
+        .appName("base_tables") \
+        .config("spark.jars", "src/drivers/postgresql-42.5.0.jar") \
+        .getOrCreate()
+    assert spark is not None
+
 def test_if_returns_dataframe():
     findspark.init()
     spark = SparkSession \
