@@ -9,6 +9,6 @@ class PostgreSQL(AlchemyDDL):
         engine = create_engine(self.conn)
         Base.metadata.create_all(engine)
 
-    def drop_table(self):
+    def drop_table(self) -> None:
         engine = create_engine(self.conn)
         Base.metadata.drop_all(engine)

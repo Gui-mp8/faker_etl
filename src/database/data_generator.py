@@ -1,9 +1,7 @@
 from typing import Any, Dict, List, Optional, Sequence, Union
-from faker import Faker
 from datetime import date
 
-from faker.generator import Generator
-
+from faker import Faker
 
 class DataGenerator(Faker):
     def __init__(self):
