@@ -4,9 +4,9 @@ Este projeto visa resolver um desafio técnico que envolve a ingestão de dados 
 
 ## Índice
 - [Tecnologias](#tecnologias)
-- [Pré-Requisitos](#pre-requisitos)
-- [Execução](#execucao)
-- [Resolução do Desafio](#resolucao-do-desafio)
+- [Pré-Requisitos](#pré-requisitos)
+- [Execução](#execução)
+- [Resolução do Desafio](#resolução-do-desafio)
 - [Observações](#observações)
 
 
