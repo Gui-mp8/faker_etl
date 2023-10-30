@@ -2,6 +2,19 @@
 
 Este projeto visa resolver um desafio técnico que envolve a ingestão de dados aleatórios em um banco PostgreSQL e a extração desses dados para a criação de uma tabela final em formato CSV.
 
+## Índice
+- [Tecnologias](#tecnologias)
+- [Pré-Requisitos](#pre-requisitos)
+- [Execução](#execucao)
+- [Resolução do Desafio](#resolucao-do-desafio)
+  - [Modelar a Estrutura](#modelar-a-estrutura)
+  - [Agregação das Tabelas](#agregacao-das-tabelas)
+- [Observações](#observações)
+  - [Por que optamos por este design?](#por-que-optamos-por-este-design)
+  - [O que faríamos se tivéssemos mais tempo para concluir o desafio?](#o-que-fariamos-se-tivessemos-mais-tempo-para-concluir-o-desafio)
+  - [Dificuldades encontradas no desenvolvimento](#dificuldades-encontradas-no-desenvolvimento)
+
+
 ## Tecnologias
 <table>
     <tr>
