@@ -57,7 +57,7 @@ Siga os passos abaixo para executar o projeto:
     $ cd faker-etl
     ```
 
-3. Execute os seguintes comandos para construir a imagem Docker e iniciar os containers:
+3. Execute o seguinte comando para construir a imagem Docker, iniciar os containers e executar o código do desafio:
 
     ```
     $ docker compose up
