@@ -88,7 +88,7 @@ A estrutura foi modelada em um banco de dados PostgreSQL utilizando o arquivo `d
 
 ### Agregação das Tabelas
 
-Para a criação da tabela `movimento_flat`, utilizamos o PySpark para processar os dados, unir as tabelas e criar a tabela `movimento_flat`.
+Para a criação da tabela `movimento_flat`, foi utilizado o PySpark para processar os dados, unir as tabelas e criar a tabela `movimento_flat`.
 
 Este fluxo pode ser observado no arquivo **main.py**.
 
