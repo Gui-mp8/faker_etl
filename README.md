@@ -21,3 +21,23 @@ Este projeto tem como objetivo resolver o desafio técnico,  no qual ocorre a in
 </table>
 
 ## Pré Requisitos
+- E necessaria a instalacao do [Python](https://www.python.org/downloads/)
+- 'E necessaria a instalacao do [Docker](https://docs.docker.com/engine/install/ubuntu/) e instalar o [docker compose plugin](https://docs.docker.com/compose/install/linux/#install-using-the-repository)
+
+**OBS**: Este banco pode ser visualizado usando o [DBeaver](https://dbeaver.io/download/).
+
+[Tutorial para a Conexão entre o Dbeaver e o PostgreSQL.](https://alexdepaula18.medium.com/conectando-no-banco-de-dados-postgresql-utilizando-dbeaver-community-1275f4c9bcba)
+
+## Rodando o Codigo
+
+Para rodar o codigo basta rodar os comandos a seguir
+### Linux:
+```
+make build
+make run
+```
+### Windows
+```
+docker build --tag=faker_etl .
+docker compose up -d
+```
