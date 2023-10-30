@@ -3,5 +3,5 @@ build:
 
 run:
 	docker compose up -d
-	sleep 8
+	sleep 10
 	docker compose down

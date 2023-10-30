@@ -25,3 +25,11 @@ services:
     volumes:
       - .:/app
     command: /spark/bin/spark-submit src/main.py
+
+  # run:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   volumes:
+  #     - .:/app
+  #   command: /spark/bin/spark-submit src/main.py
