@@ -1,7 +1,8 @@
 from abc import ABC, abstractmethod
-from typing import IO
 
-class DBExtraction(ABC):
+from pyspark.sql import DataFrame, DataFrameReader
+
+class DBTransform(ABC):
     # def __init__(self) -> None:
     #     self._jar_file_path = None
 
@@ -12,7 +13,10 @@ class DBExtraction(ABC):
     # @jar_file_path.setter
     # def jar(self, path: str):
     #     self._jar_file_path = path
+    @abstractmethod
+    def read_tables(self) -> DataFrameReader:
+        pass
 
     @abstractmethod
-    def extract_to_csv(self) -> IO[str]:
+    def query_tables(self) -> DataFrame:
         pass
