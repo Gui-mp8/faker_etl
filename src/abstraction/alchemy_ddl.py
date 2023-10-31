@@ -3,6 +3,18 @@ from abc import ABC, abstractmethod
 from sqlalchemy import Table
 
 class AlchemyDDL(ABC):
+    """
+        This class can receive any database url connections
+        like PostgreSQL, MySQl, etc... to make DDL operations
+
+        Attributes:
+            conn (str): The connection string.
+
+        Methods:
+            create_table(): Creates the tables based on the models created.
+            drop_table(): Deletes the tables based on the models created.
+
+    """
     def __init__(self) -> None:
         self._conn = None
 

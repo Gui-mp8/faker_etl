@@ -6,6 +6,19 @@ import findspark
 from abstraction.db_extraction import DBExtraction
 
 class PostgresqlExtraction(DBExtraction):
+    """
+        This class extracts data from a PostgreSQL database
+
+        Args:
+            config (dict): _description_
+            findspark (function): initialize spark
+            spark (class): starts a spark session using the PostgreSQL jar
+
+        Methods:
+            read_tables(): reads a table in database
+            query_tables(): transform the query in a dataframe
+            extracst_to_csv(): extracts teh data to a csv
+    """
     def __init__(self, config: dict) -> None:
         self.config = config
         self.findspark = findspark.init()

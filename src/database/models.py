@@ -6,6 +6,9 @@ from sqlalchemy.ext.declarative import declarative_base
 Base = declarative_base()
 
 class Associado(Base):
+    """
+        This class represents the associado table
+    """
     __tablename__ = "associado"
 
     id: int = Column(Integer, primary_key=True, index=True)
@@ -16,6 +19,9 @@ class Associado(Base):
 
 
 class Conta(Base):
+    """
+        This class represents the conta table
+    """
     __tablename__ = "conta"
 
     id: int = Column(Integer, primary_key=True, index=True)
@@ -25,6 +31,9 @@ class Conta(Base):
 
 
 class Cartao(Base):
+    """
+        This class represents the cartao table
+    """
     __tablename__ = "cartao"
 
     id: int = Column(Integer, primary_key=True, index=True)
@@ -36,6 +45,9 @@ class Cartao(Base):
 
 
 class Movimento(Base):
+    """
+        This class represents the movimento table
+    """
     __tablename__ = "movimento"
 
     id: int = Column(Integer, primary_key=True, index=True)

@@ -4,10 +4,29 @@ from datetime import date
 from faker import Faker
 
 class DataGenerator(Faker):
+    """
+        This class generates fake data for database tables
+
+        Attributes:
+            faker (class): its a  library that generates fake data
+
+        Methods:
+            sample_(table): generates data for an especific table
+
+    """
     def __init__(self):
         self.fake = Faker()
 
     def sample_associado(self, row_number: int) -> List[Dict[str, Any]]:
+        """
+            This method generates data for the table associado
+
+            Args:
+                row_number (int): Are the quantity of rows that you want in your fake data
+
+            Returns:
+                List[Dict[str, Any]]: It's returns a list that will be add at the database table
+        """
         data = list()
 
         for row in range(1, row_number + 1):
@@ -24,6 +43,15 @@ class DataGenerator(Faker):
         return data
 
     def sample_conta(self, row_number):
+        """
+            This method generates data for the table conta
+
+            Args:
+                row_number (int): Are the quantity of rows that you want in your fake data
+
+            Returns:
+                List[Dict[str, Any]]: It's returns a list that will be add at the database table
+        """
         data = list()
 
         for row in range(1, row_number + 1):
@@ -39,6 +67,15 @@ class DataGenerator(Faker):
         return data
 
     def sample_cartao(self, row_number) -> List[Dict[str, Any]]:
+        """
+            This method generates data for the table cartao
+
+            Args:
+                row_number (int): Are the quantity of rows that you want in your fake data
+
+            Returns:
+                List[Dict[str, Any]]: It's returns a list that will be add at the database table
+        """
         data = list()
 
         for row in range(1, row_number + 1):
@@ -56,6 +93,15 @@ class DataGenerator(Faker):
         return data
 
     def sample_movimento(self, row_number) -> List[Dict[str, Any]]:
+        """
+            This method generates data for the table movimento
+
+            Args:
+                row_number (int): Are the quantity of rows that you want in your fake data
+
+            Returns:
+                List[Dict[str, Any]]: It's returns a list that will be add at the database table
+        """
         data = list()
 
         for row in range(1, row_number + 1):
