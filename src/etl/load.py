@@ -6,6 +6,18 @@ from database.data_generator import DataGenerator
 from abstraction.db_load import DBLoad
 
 class PostegresqlLoad(DBLoad):
+    """
+        This class loads data at the PostgreSQL tables
+
+        Args:
+            config (dict): configuration file
+            data_gen (class): class that generates fake data
+            spark_init (function): initialize spark
+            spark (class): starts a spark session using the PostgreSQL jar
+
+        Methods:
+            add_data_to_tables(): this methods adds data to tables
+    """
     def __init__(self, config: dict) -> None:
         self.config = config
         self.data_gen = DataGenerator()
@@ -17,6 +29,9 @@ class PostegresqlLoad(DBLoad):
                         .getOrCreate()
 
     def add_data_to_tables(self) -> None:
+        """
+            This method adds data to tables
+        """
         associado_schema = StructType(
             [
                 StructField(name='id', dataType=IntegerType()),

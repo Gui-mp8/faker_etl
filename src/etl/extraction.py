@@ -9,7 +9,7 @@ class PostgresqlExtraction(DBExtraction):
         This class extracts data from a PostgreSQL database
 
         Args:
-            config (dict): _description_
+            config (dict): CONFIGURATION FILE
 
         Methods:
             extracst_to_csv(): extracts the dataframe data to a csv
