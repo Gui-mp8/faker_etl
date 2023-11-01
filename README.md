@@ -69,15 +69,15 @@ Siga os passos abaixo para executar o projeto:
     $ pip install -r requiriments.txt
     ```
 
-4. Dê as permissões necessárias para o arquivo .sh
+4. Executando os tests
 
     ```
-    $ chmod +x tests.sh
+    $ pytest tests/
     ```
-5. Execute o seguinte comando para executar o arquivo apenas se todos os testes forem aprovados
+5. Execute o seguinte comando para executar o desafio
 
     ```
-    $ ./tests.sh
+    $ docker compose up
     ```
 
 ## Resolução do Desafio
