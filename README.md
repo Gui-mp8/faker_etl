@@ -53,7 +53,7 @@ Siga os passos abaixo para executar o projeto:
 1. Clone o repositório:
 
     ```
-    $ git clone https://github.com/yourusername/faker-etl.git
+    $ git clone git@github.com:Gui-mp8/faker_etl.git
     ```
 
 2. Acesse o diretório do projeto:
