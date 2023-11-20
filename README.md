@@ -91,17 +91,3 @@ A estrutura foi modelada em um banco de dados PostgreSQL utilizando o arquivo `d
 Para a criação da tabela `movimento_flat`, foi utilizado o PySpark para processar os dados, unir as tabelas e criar a tabela `movimento_flat`.
 
 Este fluxo pode ser observado no arquivo **main.py**.
-
-## Observações
-
-### Por que optamos por este design?
-
-Optamos por um design predominantemente em Python, pois isso facilita a adição de novas funcionalidades ao código. Além disso, permite a realização de testes de forma automatizada e simples utilizando a biblioteca Pytest.
-
-### O que faríamos se tivéssemos mais tempo para concluir o desafio?
-
-Se tivéssemos mais tempo, integraríamos o Apache Airflow para uma melhor orquestração do fluxo de dados, proporcionando maior escalabilidade e gerenciamento.
-
-### Dificuldades encontradas no desenvolvimento
-
-Uma das dificuldades durante o desenvolvimento foi a configuração do arquivo `docker-compose.yml` para permitir a execução de todos os containers e o código principal com um único comando. Uma outra dificuldade foi execução automatica dos testes juntamente a execução dos containers.
